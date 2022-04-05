@@ -1,3 +1,12 @@
+.form-container {
+  align-self: center;
+}
+
+.formTitle {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
 form label {
   display: inline-block;
   width: 150px;
@@ -6,7 +15,7 @@ form label {
 input,
 textarea,
 select {
-  width: 250px;
+  width: 300px;
   padding: 0.7rem;
   margin-bottom: 1rem;
   background: white;
@@ -16,14 +25,22 @@ select {
 
 form button {
   background-color: orange;
-  width: 250px;
+  width: 300px;
   padding: 0.7rem;
   border-radius: 5px;
   margin-left: 150px;
   cursor: pointer;
 }
 
-@media screen and (max-width: 400px) {
+.form-control.invalid input {
+  border-color: red;
+}
+
+.form-control.invalid label {
+  color: red;
+}
+
+@media screen and (max-width: 500px) {
   form button {
     margin-left: 0;
   }

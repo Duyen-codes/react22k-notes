@@ -12,6 +12,7 @@ class App extends Component {
     message: "",
     role: "",
     showPopup: false,
+    isValid: true,
   };
 
   handleInputChange = (e) => {
@@ -23,6 +24,10 @@ class App extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
+    // if (e.target.value.trim().length === 0) {
+    //   this.setState({ isValid: !this.state.isValid });
+    //   return;
+    // }
     this.setState({ showPopup: !this.state.showPopup });
   };
 
@@ -32,7 +37,6 @@ class App extends Component {
         <Form
           onChange={this.handleInputChange}
           onSubmit={this.handleFormSubmit}
-          onClick={this.toggleModal}
         />
         <View
           firstName={this.state.firstName}

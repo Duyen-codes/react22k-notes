@@ -3,10 +3,11 @@ import styles from "./Form.module.css";
 
 const Form = (props) => {
   return (
-    <div>
-      <h2>Fill in the form</h2>
+    <div className={styles["form-container"]}>
+      <h2 className={styles.formTitle}>Fill in the form</h2>
       <form>
-        <div>
+        {/* ${!isValid ? "invalid" : ""} */}
+        <div className={styles["form-control"]}>
           <label htmlFor="firstName">First name</label>
           <input
             autoComplete="off"
@@ -16,7 +17,7 @@ const Form = (props) => {
             onChange={props.onChange}
           />
         </div>
-        <div>
+        <div className={styles["form-control"]}>
           <label htmlFor="lastName">Last name</label>
           <input
             autoComplete="off"
@@ -26,7 +27,7 @@ const Form = (props) => {
             onChange={props.onChange}
           />
         </div>
-        <div>
+        <div className={styles["form-control"]}>
           <label htmlFor="phoneNumber">Phone number</label>
           <input
             autoComplete="off"
@@ -36,7 +37,7 @@ const Form = (props) => {
             onChange={props.onChange}
           />
         </div>
-        <div>
+        <div className={styles["form-control"]}>
           <label htmlFor="message">Message</label>
           <textarea
             autoComplete="off"
@@ -47,7 +48,7 @@ const Form = (props) => {
             onChange={props.onChange}
           ></textarea>
         </div>
-        <div>
+        <div className={styles["form-control"]}>
           <label htmlFor="role">Role</label>
           <select name="role" id="role" onChange={props.onChange}>
             <option value="">Choose your role</option>

@@ -1,6 +1,7 @@
 .view-container {
   margin-top: 3rem;
-  max-width: 90vw;
+  width: 90%;
+  align-self: center;
 }
 
 .view-content {
