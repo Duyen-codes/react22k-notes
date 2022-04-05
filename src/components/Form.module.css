@@ -1,0 +1,37 @@
+form label {
+  display: inline-block;
+  width: 150px;
+}
+
+input,
+textarea,
+select {
+  width: 250px;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  background: white;
+  border: none;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: orange;
+  width: 250px;
+  padding: 0.7rem;
+  border-radius: 5px;
+  margin-left: 150px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  form button {
+    margin-left: 0;
+  }
+
+  form input,
+  form textarea,
+  form button,
+  form select {
+    width: 100%;
+  }
+}

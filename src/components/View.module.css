@@ -1,0 +1,32 @@
+.view-container {
+  margin-top: 3rem;
+  max-width: 90vw;
+}
+
+.view-content {
+  background: lightgoldenrodyellow;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.view-content div {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0 0.5rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.view-content div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  border-left: 6px double orange;
+  height: 100%;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: left;
+}
