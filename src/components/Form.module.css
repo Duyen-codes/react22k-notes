@@ -20,6 +20,7 @@ select {
   margin-bottom: 1rem;
   background: white;
   border: none;
+  outline: none;
   border-radius: 5px;
 }
 
