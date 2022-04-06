@@ -5,7 +5,9 @@ const Popup = (props) => {
   return (
     <div className={`${styles["modal-container"]}  `}>
       <div className={styles["modal-content"]}>
-        <button className={styles["close-btn"]}>X</button>
+        <button className={styles["close-btn"]} onClick={props.onClick}>
+          X
+        </button>
         <h2>Your note:</h2>
         <div>
           <span>First name: </span>
@@ -16,7 +18,7 @@ const Popup = (props) => {
           <span>{props.lastName}</span>
         </div>
         <div>
-          <span>phone number: </span>
+          <span>Phone number: </span>
           <span>{props.phoneNumber}</span>
         </div>
         <div>
@@ -27,8 +29,12 @@ const Popup = (props) => {
           <span>Role: </span>
           <span>{props.role}</span>
         </div>
-        <button onClick={props.onConfirm}>Yes, I am sure</button>
-        <button>Nope, don't want to post it</button>
+        <button onClick={props.onClick} className={styles["yes-btn"]}>
+          Yes, I am sure
+        </button>
+        <button onClick={props.onClick} className={styles["no-btn"]}>
+          Nope, don't want to post it
+        </button>
       </div>
     </div>
   );

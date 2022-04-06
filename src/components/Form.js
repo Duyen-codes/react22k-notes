@@ -5,7 +5,7 @@ const Form = (props) => {
   return (
     <div className={styles["form-container"]}>
       <h2 className={styles.formTitle}>Fill in the form</h2>
-      <form>
+      <form onChange={props.onChange} onSubmit={props.onSubmit}>
         {/* ${!isValid ? "invalid" : ""} */}
         <div className={styles["form-control"]}>
           <label htmlFor="firstName">First name</label>

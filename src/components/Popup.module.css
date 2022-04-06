@@ -4,21 +4,54 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
+  padding: 2rem;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+  border-radius: 1rem;
+  line-height: 1.8;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .close-btn {
-  color: #aaa;
+  background-color: #aaa;
+  color: white;
   float: right;
-  font-size: 28px;
+  font-size: 30px;
   width: 2rem;
   height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 0.8rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.yes-btn {
+  background: orange;
+}
+
+.yes-btn:active {
+  background: rgb(211, 137, 0);
+}
+
+.no-btn {
+  background: hsl(0, 100%, 68%);
+}
+
+.no-btn:active {
+  background: hsl(0, 69%, 59%);
 }

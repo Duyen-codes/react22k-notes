@@ -20,19 +20,15 @@ class App extends Component {
     });
   };
 
-  handleFormSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form submitted");
-    this.setState({ showPopup: true });
+    this.setState({ showPopup: !this.state.showPopup });
   };
 
   render() {
     return (
       <div className={styles.App}>
-        <Form
-          onChange={this.handleInputChange}
-          onSubmit={this.handleFormSubmit}
-        />
+        <Form onChange={this.handleInputChange} onSubmit={this.handleSubmit} />
         <View
           firstName={this.state.firstName}
           lastName={this.state.lastName}
@@ -42,13 +38,7 @@ class App extends Component {
         />
         <div>
           {this.state.showPopup ? (
-            <Popup
-              firstName={this.state.firstName}
-              lastName={this.state.lastName}
-              phoneNumber={this.state.phoneNumber}
-              role={this.state.role}
-              message={this.state.message}
-            />
+            <Popup onClick={this.handleSubmit} {...this.state} />
           ) : null}
         </div>
       </div>
