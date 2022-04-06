@@ -12,7 +12,6 @@ class App extends Component {
     message: "",
     role: "",
     showPopup: false,
-    isValid: true,
   };
 
   handleInputChange = (e) => {
@@ -24,11 +23,7 @@ class App extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
-    // if (e.target.value.trim().length === 0) {
-    //   this.setState({ isValid: !this.state.isValid });
-    //   return;
-    // }
-    this.setState({ showPopup: !this.state.showPopup });
+    this.setState({ showPopup: true });
   };
 
   render() {
@@ -45,7 +40,17 @@ class App extends Component {
           role={this.state.role}
           message={this.state.message}
         />
-        {this.state.showPopup ? <Popup toggle={this.handleFormSubmit} /> : null}
+        <div>
+          {this.state.showPopup ? (
+            <Popup
+              firstName={this.state.firstName}
+              lastName={this.state.lastName}
+              phoneNumber={this.state.phoneNumber}
+              role={this.state.role}
+              message={this.state.message}
+            />
+          ) : null}
+        </div>
       </div>
     );
   }

@@ -58,7 +58,7 @@ const Form = (props) => {
           </select>
         </div>
 
-        <button type="button" onClick={props.toggle}>
+        <button type="button" onClick={props.onSubmit}>
           Send
         </button>
       </form>
