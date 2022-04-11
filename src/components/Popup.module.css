@@ -12,7 +12,8 @@
   margin: 15% auto;
   padding: 2rem;
   border: 1px solid #888;
-  width: 50%;
+  min-width: 50%;
+  max-width: 80%;
   border-radius: 1rem;
   line-height: 1.8;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,

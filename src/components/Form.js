@@ -5,7 +5,7 @@ const Form = (props) => {
   return (
     <div className={styles["form-container"]}>
       <h2 className={styles.formTitle}>Fill in the form</h2>
-      <form onChange={props.onChange} onSubmit={props.onSubmit}>
+      <form onSubmit={props.onSubmit} onChange={props.onChange}>
         {/* ${!isValid ? "invalid" : ""} */}
         <div className={styles["form-control"]}>
           <label htmlFor="firstName">First name</label>
@@ -14,18 +14,12 @@ const Form = (props) => {
             id="firstName"
             type="text"
             name="firstName"
-            onChange={props.onChange}
+            required
           />
         </div>
         <div className={styles["form-control"]}>
           <label htmlFor="lastName">Last name</label>
-          <input
-            autoComplete="off"
-            id="lastName"
-            type="text"
-            name="lastName"
-            onChange={props.onChange}
-          />
+          <input autoComplete="off" id="lastName" type="text" name="lastName" />
         </div>
         <div className={styles["form-control"]}>
           <label htmlFor="phoneNumber">Phone number</label>
@@ -34,7 +28,7 @@ const Form = (props) => {
             id="phoneNumber"
             type="text"
             name="phoneNumber"
-            onChange={props.onChange}
+            required
           />
         </div>
         <div className={styles["form-control"]}>
@@ -45,13 +39,15 @@ const Form = (props) => {
             id="mesage"
             cols="20"
             rows="5"
-            onChange={props.onChange}
+            required
           ></textarea>
         </div>
         <div className={styles["form-control"]}>
           <label htmlFor="role">Role</label>
-          <select name="role" id="role" onChange={props.onChange}>
-            <option value="">Choose your role</option>
+          <select name="role" id="role" required>
+            <option value="" invalid="true" hidden>
+              Choose your role
+            </option>
             <option value="teacher">Teacher</option>
             <option value="student">Student</option>
             <option value="Other">Other</option>

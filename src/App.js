@@ -6,17 +6,22 @@ import View from "./components/View";
 
 class App extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    message: "",
-    role: "",
+    inputData: {
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      message: "",
+      role: "",
+    },
     showPopup: false,
   };
 
   handleInputChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value,
+      inputData: {
+        ...this.state.inputData,
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
@@ -25,21 +30,19 @@ class App extends Component {
     this.setState({ showPopup: !this.state.showPopup });
   };
 
+  closeHandler = () => {
+    window.location.reload();
+  };
+
   render() {
     return (
       <div className={styles.App}>
         <Form onChange={this.handleInputChange} onSubmit={this.handleSubmit} />
-        <View
-          firstName={this.state.firstName}
-          lastName={this.state.lastName}
-          phoneNumber={this.state.phoneNumber}
-          role={this.state.role}
-          message={this.state.message}
-        />
+        <View {...this.state.inputData} />
         <div>
-          {this.state.showPopup ? (
-            <Popup onClick={this.handleSubmit} {...this.state} />
-          ) : null}
+          {this.state.showPopup && (
+            <Popup close={this.closeHandler} {...this.state.inputData} />
+          )}
         </div>
       </div>
     );

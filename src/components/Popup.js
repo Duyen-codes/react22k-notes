@@ -5,7 +5,7 @@ const Popup = (props) => {
   return (
     <div className={`${styles["modal-container"]}  `}>
       <div className={styles["modal-content"]}>
-        <button className={styles["close-btn"]} onClick={props.onClick}>
+        <button className={styles["close-btn"]} onClick={props.close}>
           X
         </button>
         <h2>Your note:</h2>
@@ -29,10 +29,10 @@ const Popup = (props) => {
           <span>Role: </span>
           <span>{props.role}</span>
         </div>
-        <button onClick={props.onClick} className={styles["yes-btn"]}>
+        <button onClick={props.close} className={styles["yes-btn"]}>
           Yes, I am sure
         </button>
-        <button onClick={props.onClick} className={styles["no-btn"]}>
+        <button onClick={props.close} className={styles["no-btn"]}>
           Nope, don't want to post it
         </button>
       </div>
