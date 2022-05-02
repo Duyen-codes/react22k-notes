@@ -8,26 +8,26 @@ const Form = (props) => {
       <form onSubmit={props.onSubmit} onChange={props.onChange}>
         {/* ${!isValid ? "invalid" : ""} */}
         <div className={styles["form-control"]}>
-          <label htmlFor="firstName">First name</label>
+          <label htmlFor="firstname">First name</label>
           <input
             autoComplete="off"
-            id="firstName"
+            id="firstname"
             type="text"
-            name="firstName"
+            name="firstname"
             required
           />
         </div>
         <div className={styles["form-control"]}>
-          <label htmlFor="lastName">Last name</label>
-          <input autoComplete="off" id="lastName" type="text" name="lastName" />
+          <label htmlFor="lastname">Last name</label>
+          <input autoComplete="off" id="lastname" type="text" name="lastname" />
         </div>
         <div className={styles["form-control"]}>
-          <label htmlFor="phoneNumber">Phone number</label>
+          <label htmlFor="phonenumber">Phone number</label>
           <input
             autoComplete="off"
-            id="phoneNumber"
+            id="phonenumber"
             type="text"
-            name="phoneNumber"
+            name="phonenumber"
             required
           />
         </div>
@@ -36,7 +36,7 @@ const Form = (props) => {
           <textarea
             autoComplete="off"
             name="message"
-            id="mesage"
+            id="message"
             cols="20"
             rows="5"
             required

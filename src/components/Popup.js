@@ -11,15 +11,15 @@ const Popup = (props) => {
         <h2>Your note:</h2>
         <div>
           <span>First name: </span>
-          <span>{props.firstName}</span>
+          <span>{props.firstname}</span>
         </div>
         <div>
           <span>Last name: </span>
-          <span>{props.lastName}</span>
+          <span>{props.lastname}</span>
         </div>
         <div>
           <span>Phone number: </span>
-          <span>{props.phoneNumber}</span>
+          <span>{props.phonenumber}</span>
         </div>
         <div>
           <span>Message: </span>
@@ -29,7 +29,7 @@ const Popup = (props) => {
           <span>Role: </span>
           <span>{props.role}</span>
         </div>
-        <button onClick={props.close} className={styles["yes-btn"]}>
+        <button onClick={props.post} className={styles["yes-btn"]}>
           Yes, I am sure
         </button>
         <button onClick={props.close} className={styles["no-btn"]}>

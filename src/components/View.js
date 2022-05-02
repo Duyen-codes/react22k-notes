@@ -8,15 +8,15 @@ const View = (props) => {
       <div className={styles["view-content"]}>
         <div>
           <span>First name: </span>
-          <span>{props.firstName}</span>
+          <span>{props.firstname}</span>
         </div>
         <div>
           <span>Last name: </span>
-          <span>{props.lastName}</span>
+          <span>{props.lastname}</span>
         </div>
         <div>
           <span>Phone number: </span>
-          <span>{props.phoneNumber}</span>
+          <span>{props.phonenumber}</span>
         </div>
 
         <div>

@@ -1,31 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./NoteList.module.css";
-import axios from "axios";
 
-class NoteList extends Component {
-  state = { data: [] };
-  componentDidMount() {
-    axios.get("http://localhost:3010/notes").then((response) => {
-      console.log(response.data);
-      this.setState({ data: response.data });
-    });
-  }
-  render() {
-    const notelist = this.state.data.map((item) => <li>{item}</li>);
-    return (
-      <div className={styles["notelist-wrapper"]}>
-        <h2>NoteList:</h2>
+const NoteList = (props) => {
+  return (
+    <div className={styles["notelist-wrapper"]}>
+      <h2>NoteList:</h2>
+      {!props && <p>Loading...</p>}
+      {props && (
         <ol>
-          {this.state.data.map((item) => (
-            <li>
-              {item.firstname} {item.lastname} | {item.phone} | {item.role} |{" "}
-              {item.message}
+          {props.notes.map((item) => (
+            <li key={item.id}>
+              {item.firstname} {item.lastname} | {item.phonenumber} |{" "}
+              {item.role} | {item.message}
             </li>
           ))}
         </ol>
-      </div>
-    );
-  }
-}
+      )}
+    </div>
+  );
+};
 
 export default NoteList;
