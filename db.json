@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "firstname": "Emmie",
+      "lastname": "White",
+      "phone": "0969433044",
+      "role": "teacher",
+      "message": "some really important message"
+    },
+    {
+      "id": 2,
+      "firstname": "Penelop",
+      "lastname": "Snow",
+      "phone": "1234566",
+      "role": "student",
+      "message": "Another, super really important message"
+    },
+    {
+      "id": 3,
+      "firstname": "Darcie",
+      "lastname": "Sky",
+      "phone": "324869494",
+      "role": "student",
+      "message": "Last really importnat message"
+    }
+  ]
+}
