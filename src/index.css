@@ -22,6 +22,10 @@ button {
 }
 
 #root {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background: rgb(131, 131, 223);
+}
+
+h2 {
+  font-size: 2rem;
 }

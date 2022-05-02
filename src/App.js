@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./App.module.css";
 import Form from "./components/Form";
+import NoteList from "./components/NoteList";
 import Popup from "./components/Popup";
 import View from "./components/View";
 
@@ -36,14 +37,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.App}>
-        <Form onChange={this.handleInputChange} onSubmit={this.handleSubmit} />
-        <View {...this.state.inputData} />
-        <div>
-          {this.state.showPopup && (
-            <Popup close={this.closeHandler} {...this.state.inputData} />
-          )}
+      <div>
+        <div className={styles["App-top"]}>
+          <Form
+            onChange={this.handleInputChange}
+            onSubmit={this.handleSubmit}
+          />
+          <View {...this.state.inputData} />
+          <div>
+            {this.state.showPopup && (
+              <Popup close={this.closeHandler} {...this.state.inputData} />
+            )}
+          </div>
         </div>
+        <NoteList />
       </div>
     );
   }
