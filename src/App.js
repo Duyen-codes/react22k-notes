@@ -33,25 +33,51 @@ class App extends Component {
       },
     });
   };
+
+  // hide/show popup window
   handlePopup = (e) => {
     e.preventDefault();
     this.setState({ showPopup: !this.state.showPopup });
   };
 
-  handleSubmit = () => {
-    axios
-      .post("http://localhost:3010/notes", { ...this.state.inputData })
-      .then((res) => {
-        this.setState({
-          notes: [...this.state.notes, res.data],
-          showPopup: !this.state.showPopup,
-        });
-      })
-      .catch((error) => console.log(error));
-  };
-
   closeHandler = () => {
     window.location.reload();
+  };
+  // when users click yes, I'm sure
+
+  handleSubmit = () => {
+    console.log("handle submit clicked");
+    axios
+      .post("http://localhost:3010/notes", this.state.inputData)
+      .then((res) => {
+        console.log(res);
+        window.location.reload();
+      })
+
+      .catch((error) => console.log(error));
+    // axios
+    //   .post(
+    //     "http://localhost:3010/notes",
+    //     this.state.inputData
+    //   ) /* {...this.state.inputData} works too but no need since inputData is already an object so spread operator is not needed */
+    //   .then((res) => {
+    //     this.setState({
+    //       notes: [...this.state.notes, res.data],
+    //       showPopup: !this.state.showPopup,
+    //     });
+    //     console.log("res", res);
+    //   })
+    //   .catch((error) => console.log(error));
+    // this.closeHandler();
+  };
+
+  handleDelete = (note) => {
+    axios
+      .delete(`http://localhost:3010/notes/${note.id}`)
+      .then((response) => {
+        this.setState({ notes: [...this.state.notes, response.data] });
+      })
+      .catch((error) => console.log(error));
   };
 
   render() {
@@ -70,7 +96,7 @@ class App extends Component {
             )}
           </div>
         </div>
-        <NoteList notes={this.state.notes} />
+        <NoteList notes={this.state.notes} onClick={this.handleDelete} />
       </div>
     );
   }

@@ -54,7 +54,7 @@ const Form = (props) => {
           </select>
         </div>
 
-        <button type="button" onClick={props.onSubmit}>
+        <button type="submit" onClick={props.onSubmit}>
           Send
         </button>
       </form>
