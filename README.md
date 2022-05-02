@@ -37,7 +37,7 @@ Users are able to:
 Recap over some of my major learnings while working through this project:
 
 - Minimize using extra wrapping div whenever possible
-- Created fake JSON endpoint for getting, posting, editting and deleting data from server
+- Created fake JSON endpoint for getting, posting, editing and deleting data from server
 
 ### Continued development
 

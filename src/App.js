@@ -40,11 +40,12 @@ class App extends Component {
     this.setState({ showPopup: !this.state.showPopup });
   };
 
+  // reload page when closing popup
   closeHandler = () => {
     window.location.reload();
   };
-  // when users click yes, I'm sure
 
+  // when users confirm 'yes'
   handleSubmit = () => {
     console.log("handle submit clicked");
     axios
