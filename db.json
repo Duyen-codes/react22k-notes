@@ -1,14 +1,6 @@
 {
   "notes": [
     {
-      "firstname": "Eli",
-      "lastname": "dkgjdkj",
-      "phonenumber": "6806598659",
-      "message": "gdkagjdlgj",
-      "role": "student",
-      "id": 17
-    },
-    {
       "firstname": "Blac",
       "lastname": "queen",
       "phonenumber": "7575767",
@@ -31,6 +23,22 @@
       "message": "adggg",
       "role": "student",
       "id": 21
+    },
+    {
+      "firstname": "lily",
+      "lastname": "garden",
+      "phonenumber": "44555",
+      "message": "kgjkjgkdjg",
+      "role": "student",
+      "id": 22
+    },
+    {
+      "firstname": "something else",
+      "lastname": "bond",
+      "phonenumber": "858660",
+      "message": "jglgjdk",
+      "role": "student",
+      "id": 23
     }
   ]
 }
