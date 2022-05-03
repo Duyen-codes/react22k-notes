@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./App.module.css";
 import Form from "./components/Form";
 import NoteList from "./components/NoteList";
@@ -15,62 +15,48 @@ const App = () => {
     message: "",
     role: "",
   });
+  const [showPopup, setShowPopup] =
+    useState(false); /* hide/show overlay when submit form */
+  const [updatePopup, setUpdatePopup] = useState(false);
+  const [notes, setNotes] = useState([]);
+  const [currentNote, setCurrentNote] = useState({});
 
-  const [showPopup, setShowPopup] = useState(false);
-};
-class App extends Component {
-  state = {
-    inputData: {
-      firstname: "",
-      lastname: "",
-      phonenumber: "",
-      message: "",
-      role: "",
-    },
-    showPopup: false,
-    updatePopup: false,
-    notes: [],
-    currentNote: {},
-  };
-
-  componentDidMount() {
+  useEffect(() => {
+    /* fetch data from JSON server using axios get inside useEffect = componentDidMount */
     axios.get("http://localhost:3010/notes").then((response) => {
-      this.setState({ notes: response.data });
+      setNotes(response.data);
     });
-  }
+  }, []); /* */
 
-  handleInputChange = (e) => {
-    this.setState({
-      inputData: {
-        ...this.state.inputData,
-        [e.target.name]: e.target.value,
-      },
+  const handleInputChange = (e) => {
+    setInputData({
+      ...inputData,
+      [e.target.name]: e.target.value,
     });
   };
 
   // hide/show popup window
-  handlePopup = (e) => {
+  const handlePopup = (e) => {
     e.preventDefault();
-    this.setState({ showPopup: !this.state.showPopup });
+    setShowPopup(!showPopup);
   };
 
   // reload page when closing popup
-  closeHandler = () => {
+  const closeHandler = () => {
     window.location.reload();
   };
 
   // when users confirm 'yes, I'm sure'
 
-  handleSubmit = () => {
+  const handleSubmit = () => {
     console.log("handle submit clicked");
     // post input data to server
     axios
-      .post("http://localhost:3010/notes", this.state.inputData)
+      .post("http://localhost:3010/notes", inputData)
       .then((res) => {
         console.log(res);
         window.location.reload();
       })
-
       .catch((error) => console.log(error));
     // axios
     //   .post(
@@ -88,75 +74,61 @@ class App extends Component {
     // this.closeHandler();
   };
 
-  handleDelete = (id) => {
+  const handleDelete = (id) => {
+    console.log("from handleDelete: ", id);
     axios.delete(`http://localhost:3010/notes/${id}`).then((res) => {
-      const notes = this.state.notes.filter((item) => item.id !== id);
-      this.setState({ notes: notes });
+      const filteredNotes = notes.filter((item) => item.id !== id);
+      console.log(filteredNotes);
+      setNotes(filteredNotes);
     });
   };
 
   // handle when user clicks 'Edit' button
 
-  handleShowEditForm = (item) => {
-    this.setState({ updatePopup: true, currentNote: item });
+  const handleShowEditForm = (item) => {
+    setUpdatePopup(true);
+    setCurrentNote(item);
   };
 
   // handle input change in EditForm.js
 
-  inputUpdateHandler = (e) => {
-    this.setState({
-      currentNote: {
-        ...this.state.currentNote,
-        [e.target.name]: e.target.value,
-      },
-    });
+  const inputUpdateHandler = (e) => {
+    setCurrentNote({ ...currentNote, [e.target.name]: e.target.value });
   };
 
   // update data in json server using put method
 
-  putToServerHandler = (id) => {
+  const putToServerHandler = (id) => {
     axios
-      .put(`http://localhost:3010/notes/${id}`, this.state.currentNote)
+      .put(`http://localhost:3010/notes/${id}`, currentNote)
       .then((res) => res.data);
   };
 
-  render() {
-    return (
-      <div>
-        <div className={styles["App-top"]}>
-          <Form change={this.handleInputChange} submit={this.handlePopup} />
-          <View {...this.state.inputData} />
-          <div>
-            {this.state.showPopup && (
-              <Popup
-                close={this.closeHandler}
-                post={this.handleSubmit}
-                {...this.state.inputData}
-              />
-            )}
-          </div>
-          <div>
-            {this.state.updatePopup && (
-              <EditForm
-                {...this.state.currentNote}
-                close={this.closeHandler}
-                currentNote={this.state.currentNote}
-                change={this.inputUpdateHandler}
-                submit={() =>
-                  this.putToServerHandler(this.state.currentNote.id)
-                }
-              />
-            )}
-          </div>
+  return (
+    <div>
+      <div className={styles["App-top"]}>
+        <Form change={handleInputChange} submit={handlePopup} />
+        <View {...inputData} />
+        <div>
+          {showPopup && (
+            <Popup close={closeHandler} post={handleSubmit} {...inputData} />
+          )}
         </div>
-        <NoteList
-          notes={this.state.notes}
-          delete={this.handleDelete}
-          edit={this.handleShowEditForm}
-        />
+        <div>
+          {updatePopup && (
+            <EditForm
+              {...currentNote}
+              close={closeHandler}
+              currentNote={currentNote}
+              change={inputUpdateHandler}
+              submit={() => putToServerHandler(currentNote.id)}
+            />
+          )}
+        </div>
       </div>
-    );
-  }
-}
+      <NoteList notes={notes} delete={handleDelete} edit={handleShowEditForm} />
+    </div>
+  );
+};
 
 export default App;

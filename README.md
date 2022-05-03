@@ -38,11 +38,22 @@ Recap over some of my major learnings while working through this project:
 
 - Minimize using extra wrapping div whenever possible
 - Created fake JSON endpoint for getting, posting, editing and deleting data from server
+- Added this line inside scripts of package.json
+
+```
+  "server": "json-server -p3001 --watch db.json"
+```
+
+- Json server starts running on port 3000 by default, but since projects created using npx create-react-app reserve port 3000, an alternate port must be defined, in this case port 3001 for the json-server.
+
 - Run JSON server by running the command:
 
 ```
 npm server run
 ```
+
+- navigate to the address to see notes data that are previously written to the db.json file
+  [address][http://localhost:3010/notes]
 
 ### Continued development
 
@@ -53,5 +64,8 @@ What I would like to continue focusing on in future projects:
 Concepts I'm still not completely comfortable with or techniques I have found useful that I want to refine and perfect:
 
 ### Useful Resources
+
+- (Fullstakopen 2022)[https://fullstackopen.com/en/part2/getting_data_from_server]
+- (Chrome plugin JSON-data view:)[https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc]
 
 ## Acknowledgments
