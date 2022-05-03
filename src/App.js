@@ -17,9 +17,9 @@ class App extends Component {
       role: "",
     },
     showPopup: false,
-    showEditForm: false,
+    updatePopup: false,
     notes: [],
-    currentNote: "",
+    currentNote: {},
   };
 
   componentDidMount() {
@@ -85,11 +85,11 @@ class App extends Component {
 
   // handle when user clicks 'Edit' button
   handleEdit = (item) => {
-    this.setState({ currentNote: item, showEditForm: true });
+    this.setState({ currentNote: item, updatePopup: true });
   };
 
   updateHandler = (item) => {
-    this.setState({ currentNote: item, showEditForm: true });
+    this.setState({ currentNote: item, updatePopup: true });
   };
 
   inputUpdateHandler = (e) => {
@@ -123,7 +123,7 @@ class App extends Component {
             )}
           </div>
           <div>
-            {this.state.showEditForm && (
+            {this.state.updatePopup && (
               <EditForm
                 close={this.closeHandler}
                 currentNote={this.state.currentNote}
