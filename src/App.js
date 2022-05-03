@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styles from "./App.module.css";
 import Form from "./components/Form";
 import NoteList from "./components/NoteList";
@@ -7,7 +7,7 @@ import View from "./components/View";
 import axios from "axios";
 import EditForm from "./components/EditForm";
 
-const App 
+const App = () => {};
 class App extends Component {
   state = {
     inputData: {
