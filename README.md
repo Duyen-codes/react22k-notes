@@ -38,6 +38,11 @@ Recap over some of my major learnings while working through this project:
 
 - Minimize using extra wrapping div whenever possible
 - Created fake JSON endpoint for getting, posting, editing and deleting data from server
+- Run JSON server by running the command:
+
+```
+npm server run
+```
 
 ### Continued development
 
