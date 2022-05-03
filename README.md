@@ -73,6 +73,10 @@ npm install json-server --save-dev
 
 - To run json-server, the react app and commit changes to github simultaneously, it is necessary to use 2 terminal windows. One to keep json-server running, one to run react-app, and another for committing changes to github.
 
+- fetch data from a server inside useEffect in case React components defined as functions - the so-called functional components, and inside componentDidMount in case class components.
+
+- the function useEffect takes 2 parameters: the first is a function, the second parameter of useEffect is used to specify how often the effect is fun. If the 2nd para is an empty array [], then the effect is only run along with the first render of the component.
+
 ### Continued development
 
 What I would like to continue focusing on in future projects:
