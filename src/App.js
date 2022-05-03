@@ -7,7 +7,17 @@ import View from "./components/View";
 import axios from "axios";
 import EditForm from "./components/EditForm";
 
-const App = () => {};
+const App = () => {
+  const [inputData, setInputData] = useState({
+    firstname: "",
+    lastname: "",
+    phonenumber: "",
+    message: "",
+    role: "",
+  });
+
+  const [showPopup, setShowPopup] = useState(false);
+};
 class App extends Component {
   state = {
     inputData: {
