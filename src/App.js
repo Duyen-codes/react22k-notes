@@ -48,7 +48,8 @@ class App extends Component {
     window.location.reload();
   };
 
-  // when users confirm 'yes'
+  // when users confirm 'yes, I'm sure'
+
   handleSubmit = () => {
     console.log("handle submit clicked");
     // post input data to server
@@ -84,13 +85,12 @@ class App extends Component {
   };
 
   // handle when user clicks 'Edit' button
-  handleEdit = (item) => {
-    this.setState({ currentNote: item, updatePopup: true });
+
+  handleShowEditForm = (item) => {
+    this.setState({ updatePopup: true, currentNote: item });
   };
 
-  updateHandler = (item) => {
-    this.setState({ currentNote: item, updatePopup: true });
-  };
+  // handle input change in EditForm.js
 
   inputUpdateHandler = (e) => {
     this.setState({
@@ -101,7 +101,9 @@ class App extends Component {
     });
   };
 
-  postHandler = (id) => {
+  // update data in json server using put method
+
+  putToServerHandler = (id) => {
     axios
       .put(`http://localhost:3010/notes/${id}`, this.state.currentNote)
       .then((res) => res.data);
@@ -111,7 +113,7 @@ class App extends Component {
     return (
       <div>
         <div className={styles["App-top"]}>
-          <Form onChange={this.handleInputChange} onSubmit={this.handlePopup} />
+          <Form change={this.handleInputChange} submit={this.handlePopup} />
           <View {...this.state.inputData} />
           <div>
             {this.state.showPopup && (
@@ -125,9 +127,13 @@ class App extends Component {
           <div>
             {this.state.updatePopup && (
               <EditForm
+                {...this.state.currentNote}
                 close={this.closeHandler}
                 currentNote={this.state.currentNote}
-                onChange={this.handleInputChange}
+                change={this.inputUpdateHandler}
+                submit={() =>
+                  this.putToServerHandler(this.state.currentNote.id)
+                }
               />
             )}
           </div>
@@ -135,7 +141,7 @@ class App extends Component {
         <NoteList
           notes={this.state.notes}
           delete={this.handleDelete}
-          edit={this.handleEdit}
+          edit={this.handleShowEditForm}
         />
       </div>
     );

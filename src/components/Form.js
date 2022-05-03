@@ -5,7 +5,7 @@ const Form = (props) => {
   return (
     <div className={styles["form-container"]}>
       <h2 className={styles.formTitle}>Fill in the form</h2>
-      <form onSubmit={props.onSubmit} onChange={props.onChange}>
+      <form onSubmit={props.submit} onChange={props.change}>
         <div className={styles["form-control"]}>
           <label htmlFor="firstname">First name</label>
           <input
@@ -19,7 +19,13 @@ const Form = (props) => {
         </div>
         <div className={styles["form-control"]}>
           <label htmlFor="lastname">Last name</label>
-          <input autoComplete="off" id="lastname" type="text" name="lastname" />
+          <input
+            autoComplete="off"
+            id="lastname"
+            type="text"
+            name="lastname"
+            defaultValue={props.lastname}
+          />
         </div>
         <div className={styles["form-control"]}>
           <label htmlFor="phonenumber">Phone number</label>
@@ -29,7 +35,7 @@ const Form = (props) => {
             type="text"
             name="phonenumber"
             required
-            defaultValue={props.firstname}
+            defaultValue={props.phonenumber}
           />
         </div>
         <div className={styles["form-control"]}>
@@ -46,7 +52,7 @@ const Form = (props) => {
         </div>
         <div className={styles["form-control"]}>
           <label htmlFor="role">Role</label>
-          <select name="role" id="role" required>
+          <select name="role" id="role" required defaultValue={props.role}>
             <option value="" invalid="true" hidden>
               Choose your role
             </option>
