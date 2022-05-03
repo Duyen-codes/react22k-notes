@@ -1,132 +1,28 @@
 {
   "notes": [
     {
-      "firstname": "duyen",
-      "lastname": "nguyen",
-      "phonenumber": "123",
-      "message": "message",
+      "firstname": "black",
+      "lastname": "queen",
+      "phonenumber": "23456",
+      "message": "kgkajkjgdk",
       "role": "student",
-      "id": 1
-    },
-    {
-      "firstname": "alddj",
-      "lastname": "gldjakdjg",
-      "phonenumber": "kdjkfjdkfgj",
-      "message": "ldjfkdjfa ",
-      "role": "teacher",
-      "id": 2
-    },
-    {
-      "firstname": "test",
-      "lastname": "eagjakg",
-      "phonenumber": "kgjdkjgka",
-      "message": "adadd",
-      "role": "teacher",
-      "id": 3
-    },
-    {
-      "firstname": "james",
-      "lastname": "bond",
-      "phonenumber": "t545445",
-      "message": "agaegagawg",
-      "role": "teacher",
-      "id": 4
-    },
-    {
-      "firstname": "sfsga",
-      "lastname": "gagaga",
-      "phonenumber": "agagd",
-      "message": "aaagga",
-      "role": "teacher",
-      "id": 5
-    },
-    {
-      "firstname": "sfsga",
-      "lastname": "gagaga",
-      "phonenumber": "agagd",
-      "message": "aaagga",
-      "role": "teacher",
-      "id": 6
-    },
-    {
-      "firstname": "margit",
-      "lastname": "testing",
-      "phonenumber": "gaadf",
-      "message": "adjgaekgj",
-      "role": "teacher",
-      "id": 7
-    },
-    {
-      "firstname": "aaaa",
-      "lastname": "aaa",
-      "phonenumber": "aaa",
-      "message": "aaa",
-      "role": "teacher",
-      "id": 8
-    },
-    {
-      "firstname": "aaaa",
-      "lastname": "aaa",
-      "phonenumber": "aaa",
-      "message": "aaa",
-      "role": "teacher",
-      "id": 9
-    },
-    {
-      "firstname": "insdie ",
-      "lastname": "dsidjkdjagkqj",
-      "phonenumber": "kgjgkadkjk",
-      "message": "jkgjkagg",
-      "role": "teacher",
-      "id": 10
-    },
-    {
-      "firstname": "jdkjfkajgdkgj",
-      "lastname": "gkdjgkdjgk",
-      "phonenumber": "gjgkajk",
-      "message": "gjdkgajgkd",
-      "role": "student",
-      "id": 11
-    },
-    {
-      "firstname": "sbumakdjkf",
-      "lastname": "gjdkjakgjk",
-      "phonenumber": "jkgjdkgjak",
-      "message": "kgjgkajgkaw",
-      "role": "teacher",
-      "id": 12
-    },
-    {
-      "firstname": "addf",
-      "lastname": "gagdgq",
-      "phonenumber": "jkgjakgjdk",
-      "message": "gkdjkgjk",
-      "role": "teacher",
-      "id": 13
-    },
-    {
-      "firstname": "addf",
-      "lastname": "gagdgq",
-      "phonenumber": "jkgjakgjdk",
-      "message": "gkdjkgjk",
-      "role": "teacher",
-      "id": 14
-    },
-    {
-      "firstname": "kdjgkjdkj",
-      "lastname": "gdkjgkjgk",
-      "phonenumber": "kdjdkgjkag",
-      "message": "kgdjkgajg",
-      "role": "teacher",
       "id": 15
     },
     {
-      "firstname": "reload",
-      "lastname": "reagagkjk",
-      "phonenumber": "gkdjgkdjgka",
-      "message": "aaa",
-      "role": "teacher",
+      "firstname": "James",
+      "lastname": "Bond",
+      "phonenumber": "4479669",
+      "message": "gkdjakgjk",
+      "role": "student",
       "id": 16
+    },
+    {
+      "firstname": "Eli",
+      "lastname": "dkgjdkj",
+      "phonenumber": "6806598659",
+      "message": "gdkagjdlgj",
+      "role": "student",
+      "id": 17
     }
   ]
 }

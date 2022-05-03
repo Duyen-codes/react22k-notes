@@ -3,3 +3,9 @@
   margin-top: 3rem;
   padding-inline: 2rem;
 }
+
+.notelist-wrapper button {
+  border: none;
+  background: transparent;
+  color: black;
+}

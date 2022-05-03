@@ -12,7 +12,12 @@ const NoteList = (props) => {
             <li key={item.id}>
               {item.firstname} | {item.lastname} | {item.phonenumber} |{" "}
               {item.role} | {item.message}
-              <button onClick={() => props.onClick(item)}>delete</button>
+              <button onClick={() => props.delete(item.id)}>
+                <i className="fa-solid fa-trash-can"></i>
+              </button>
+              <button onClick={() => props.edit(item.id)}>
+                <i className="fa-solid fa-pen-to-square"></i>
+              </button>
             </li>
           ))}
         </ol>

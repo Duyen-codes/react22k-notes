@@ -48,6 +48,7 @@ class App extends Component {
   // when users confirm 'yes'
   handleSubmit = () => {
     console.log("handle submit clicked");
+    // post input data to server
     axios
       .post("http://localhost:3010/notes", this.state.inputData)
       .then((res) => {
@@ -72,13 +73,34 @@ class App extends Component {
     // this.closeHandler();
   };
 
-  handleDelete = (note) => {
-    axios
-      .delete(`http://localhost:3010/notes/${note.id}`)
-      .then((response) => {
-        this.setState({ notes: [...this.state.notes, response.data] });
-      })
-      .catch((error) => console.log(error));
+  handleDelete = (id) => {
+    axios.delete(`http://localhost:3010/notes/${id}`).then((res) => {
+      const notes = this.state.notes.filter((item) => item.id !== id);
+      this.setState({ notes: notes });
+    });
+  };
+
+  handleEdit = (id) => {
+    console.log("handle edit", "item id:", id);
+  };
+
+  handleUpdate = (id) => {
+    axios.put(`http://localhost:3010/notes/${id}`);
+    console.log("handleEdit clicked");
+    this.setState({ showPopup: !this.state.showPopup });
+  };
+
+  updateHandler = (item) => {
+    this.setState({ currentNote: item });
+  };
+
+  inputUpdateHandler = (e) => {
+    this.setState({
+      currentNote: {
+        ...this.state.currentNote,
+        [e.target.name]: e.target.value,
+      },
+    });
   };
 
   render() {
@@ -97,7 +119,11 @@ class App extends Component {
             )}
           </div>
         </div>
-        <NoteList notes={this.state.notes} onClick={this.handleDelete} />
+        <NoteList
+          notes={this.state.notes}
+          delete={this.handleDelete}
+          edit={this.handleEdit}
+        />
       </div>
     );
   }
