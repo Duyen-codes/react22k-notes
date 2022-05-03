@@ -6,7 +6,6 @@ const Form = (props) => {
     <div className={styles["form-container"]}>
       <h2 className={styles.formTitle}>Fill in the form</h2>
       <form onSubmit={props.onSubmit} onChange={props.onChange}>
-        {/* ${!isValid ? "invalid" : ""} */}
         <div className={styles["form-control"]}>
           <label htmlFor="firstname">First name</label>
           <input
@@ -15,6 +14,7 @@ const Form = (props) => {
             type="text"
             name="firstname"
             required
+            defaultValue={props.firstname}
           />
         </div>
         <div className={styles["form-control"]}>
@@ -29,6 +29,7 @@ const Form = (props) => {
             type="text"
             name="phonenumber"
             required
+            defaultValue={props.firstname}
           />
         </div>
         <div className={styles["form-control"]}>
@@ -40,6 +41,7 @@ const Form = (props) => {
             cols="20"
             rows="5"
             required
+            defaultValue={props.message}
           ></textarea>
         </div>
         <div className={styles["form-control"]}>

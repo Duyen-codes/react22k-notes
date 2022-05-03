@@ -5,6 +5,7 @@ import NoteList from "./components/NoteList";
 import Popup from "./components/Popup";
 import View from "./components/View";
 import axios from "axios";
+import EditForm from "./components/EditForm";
 
 class App extends Component {
   state = {
@@ -16,6 +17,7 @@ class App extends Component {
       role: "",
     },
     showPopup: false,
+    showEditForm: false,
     notes: [],
   };
 
@@ -82,16 +84,11 @@ class App extends Component {
 
   handleEdit = (id) => {
     console.log("handle edit", "item id:", id);
-  };
-
-  handleUpdate = (id) => {
-    axios.put(`http://localhost:3010/notes/${id}`);
-    console.log("handleEdit clicked");
-    this.setState({ showPopup: !this.state.showPopup });
+    this.setState({ showEditForm: !this.state.showEditForm });
   };
 
   updateHandler = (item) => {
-    this.setState({ currentNote: item });
+    this.setState({ currentNote: item, showEditForm: true });
   };
 
   inputUpdateHandler = (e) => {
@@ -101,6 +98,10 @@ class App extends Component {
         [e.target.name]: e.target.value,
       },
     });
+  };
+
+  postHandler = (id) => {
+    axios.put(`http://localhost:3010/notes/${id}`, this.state.currentNote);
   };
 
   render() {
@@ -117,6 +118,9 @@ class App extends Component {
                 {...this.state.inputData}
               />
             )}
+          </div>
+          <div>
+            {this.state.showEditForm && <EditForm close={this.closeHandler} />}
           </div>
         </div>
         <NoteList
