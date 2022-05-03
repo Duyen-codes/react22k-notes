@@ -7,6 +7,7 @@ import View from "./components/View";
 import axios from "axios";
 import EditForm from "./components/EditForm";
 
+const App 
 class App extends Component {
   state = {
     inputData: {
