@@ -1,14 +1,6 @@
 {
   "notes": [
     {
-      "firstname": "black",
-      "lastname": "queen",
-      "phonenumber": "23456",
-      "message": "kgkajkjgdk",
-      "role": "student",
-      "id": 15
-    },
-    {
       "firstname": "James",
       "lastname": "Bond",
       "phonenumber": "4479669",
@@ -23,6 +15,14 @@
       "message": "gdkagjdlgj",
       "role": "student",
       "id": 17
+    },
+    {
+      "firstname": "Blac",
+      "lastname": "queen",
+      "phonenumber": "7575767",
+      "message": "jdkjgdkjl",
+      "role": "student",
+      "id": 18
     }
   ]
 }

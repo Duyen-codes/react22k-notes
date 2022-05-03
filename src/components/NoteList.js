@@ -15,7 +15,7 @@ const NoteList = (props) => {
               <button onClick={() => props.delete(item.id)}>
                 <i className="fa-solid fa-trash-can"></i>
               </button>
-              <button onClick={() => props.edit(item.id)}>
+              <button onClick={() => props.edit(item)}>
                 <i className="fa-solid fa-pen-to-square"></i>
               </button>
             </li>

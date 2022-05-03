@@ -19,6 +19,7 @@ class App extends Component {
     showPopup: false,
     showEditForm: false,
     notes: [],
+    currentNote: "",
   };
 
   componentDidMount() {
@@ -82,9 +83,9 @@ class App extends Component {
     });
   };
 
-  handleEdit = (id) => {
-    console.log("handle edit", "item id:", id);
-    this.setState({ showEditForm: !this.state.showEditForm });
+  // handle when user clicks 'Edit' button
+  handleEdit = (item) => {
+    this.setState({ currentNote: item, showEditForm: true });
   };
 
   updateHandler = (item) => {
@@ -101,7 +102,9 @@ class App extends Component {
   };
 
   postHandler = (id) => {
-    axios.put(`http://localhost:3010/notes/${id}`, this.state.currentNote);
+    axios
+      .put(`http://localhost:3010/notes/${id}`, this.state.currentNote)
+      .then((res) => res.data);
   };
 
   render() {
@@ -120,7 +123,13 @@ class App extends Component {
             )}
           </div>
           <div>
-            {this.state.showEditForm && <EditForm close={this.closeHandler} />}
+            {this.state.showEditForm && (
+              <EditForm
+                close={this.closeHandler}
+                currentNote={this.state.currentNote}
+                onChange={this.handleInputChange}
+              />
+            )}
           </div>
         </div>
         <NoteList

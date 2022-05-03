@@ -4,12 +4,15 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
   background-color: #fefefe;
-  /* margin: 15% auto; */
+  margin: 15% auto;
   padding: 2rem;
   border: 1px solid #888;
   min-width: 50%;
@@ -23,7 +26,9 @@
 .close-btn {
   background-color: #aaa;
   color: white;
-  float: right;
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
   font-size: 30px;
   width: 2rem;
   height: 2rem;
