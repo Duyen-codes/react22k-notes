@@ -1,7 +1,7 @@
 # A responsive CRUD App with local JSON server
 
 ## Welcome! 👋
-
+- live demo: https://note-app-two-chi.vercel.app/
 ## Table of contents
 
 - [Overview](#overview)
