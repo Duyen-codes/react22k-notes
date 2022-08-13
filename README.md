@@ -77,6 +77,8 @@ npm install json-server --save-dev
 
 - the function useEffect takes 2 parameters: the first is a function, the second parameter of useEffect is used to specify how often the effect is fun. If the 2nd para is an empty array [], then the effect is only run along with the first render of the component.
 
+#### Deployed with vercel
+
 ### Continued development
 
 What I would like to continue focusing on in future projects:
@@ -90,5 +92,6 @@ Concepts I'm still not completely comfortable with or techniques I have found us
 - (Fullstakopen 2022)[https://fullstackopen.com/en/part2/getting_data_from_server]
 - (Chrome plugin JSON-data view:)[https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc]
 - (Axios: ) [https://github.com/axios/axios]
+- Various ways to deploy React app: [https://blog.logrocket.com/8-ways-deploy-react-app-free/#vercel]
 
 ## Acknowledgments
