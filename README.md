@@ -43,11 +43,11 @@ Recap over some of my major learnings while working through this project:
 - Start Json-server from the project root directory with the command:
 
 ```
-npm server run
+npm run server
 ```
 
 - navigate to the address to see notes data that are previously written to the db.json file
-  (address)[http://localhost:3010/notes]
+  (address)[http://localhost:3001/notes]
 - use axios library instead of fetch to pull data from the server.
 - install axios from the command line using
 

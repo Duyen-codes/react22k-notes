@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     /* fetch data from JSON server using axios get inside useEffect = componentDidMount */
-    axios.get("http://localhost:3010/notes").then((response) => {
+    axios.get("http://localhost:3001/notes").then((response) => {
       setNotes(response.data);
     });
   }, []); /* */
@@ -52,7 +52,7 @@ const App = () => {
     console.log("handle submit clicked");
     // post input data to server
     axios
-      .post("http://localhost:3010/notes", inputData)
+      .post("http://localhost:3001/notes", inputData)
       .then((res) => {
         console.log(res);
         window.location.reload();
@@ -75,8 +75,7 @@ const App = () => {
   };
 
   const handleDelete = (id) => {
-    console.log("from handleDelete: ", id);
-    axios.delete(`http://localhost:3010/notes/${id}`).then((res) => {
+    axios.delete(`http://localhost:3001/notes/${id}`).then((res) => {
       const filteredNotes = notes.filter((item) => item.id !== id);
       console.log(filteredNotes);
       setNotes(filteredNotes);
@@ -84,7 +83,6 @@ const App = () => {
   };
 
   // handle when user clicks 'Edit' button
-
   const handleShowEditForm = (item) => {
     setUpdatePopup(true);
     setCurrentNote(item);
@@ -100,7 +98,7 @@ const App = () => {
 
   const putToServerHandler = (id) => {
     axios
-      .put(`http://localhost:3010/notes/${id}`, currentNote)
+      .put(`http://localhost:3001/notes/${id}`, currentNote)
       .then((res) => res.data);
   };
 

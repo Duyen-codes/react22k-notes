@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./View.module.css";
 
 const View = (props) => {
-  console.log("View.js", props);
   return (
     <div className={styles["view-container"]}>
       <h2>This is your input:</h2>

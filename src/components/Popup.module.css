@@ -21,14 +21,15 @@
   line-height: 1.8;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    position: relative;
 }
 
 .close-btn {
   background-color: #aaa;
   color: white;
-  position: fixed;
-  top: 5rem;
-  right: 5rem;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
   font-size: 30px;
   width: 2rem;
   height: 2rem;
